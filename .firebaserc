@@ -1,7 +1,6 @@
 {
   "projects": {
-    "default": "cardhoarding-84f45",
-    "dev": "cardhoarding-84f45"
+    "default": "cardhoarding-84f45"
   },
   "targets": {},
   "etags": {}
