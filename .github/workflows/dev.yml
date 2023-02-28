@@ -1,0 +1,27 @@
+name: Deploy to Firebase
+
+on:
+  push:
+    branches:
+      - dev
+
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: '14.x'
+      - name: Install dependencies
+        run: yarn install
+      - name: Build
+        run: yarn build
+      - name: Deploy to Firebase
+        uses: w9jds/firebase-action@master
+        with:
+          args: hosting:channel:deploy dev
+        env:
+          GCP_SA_KEY: ${{ secrets.GCP_SA_KEY }}
