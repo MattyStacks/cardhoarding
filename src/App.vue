@@ -1,4 +1,6 @@
 <template>
+  <!-- <NavbarVue :title="title"/>
+  <router-view/> -->
   <img alt="Vue logo" src="./assets/logo.png">
   <HelloWorld msg="Welcome to Your Vue.js App"/>
   <SiteFooter/>
@@ -7,12 +9,20 @@
 <script>
 import HelloWorld from './components/HelloWorld.vue'
 import SiteFooter from './components/SiteFooter.vue'
+// import NavbarVue from './components/NavbarVue.vue'
+
 
 export default {
   name: 'App',
   components: {
+    // NavbarVue,
     HelloWorld,
     SiteFooter
+},
+  data() {
+    return {
+      title: 'My App'
+    }
   }
 }
 </script>
